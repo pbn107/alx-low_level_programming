@@ -15,7 +15,7 @@ int len(char *s)
 		len++;
 		i++;
 	}
-	return len;
+	return (len);
 }
 
 /**
@@ -27,7 +27,7 @@ char *_strdup(char *str)
 {
 	int i = 0, l = 0;
 
-	char *arr = (char *)malloc(l * sizeof(char));
+	char *arr;
 
 	if (str == NULL)
 	{
