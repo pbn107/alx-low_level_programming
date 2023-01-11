@@ -25,14 +25,14 @@ char *str_concat(char *s1, char *s2)
 	}
 	arr = malloc(sizeof(s1) + sizeof(s2) + 1);
 
-	while ( s1[i] != NULL)
+	while ( s1[i] != '\0')
 	{
 		arr[i] = s1[i];
 		i++;
 	}
 
 
-	while ( s2[j] != NULL)
+	while ( s2[j] != '\0')
 	{
 		arr[i+j] = s2[j];
 		j++;
