@@ -1,4 +1,4 @@
-#include "main.h";
+#include "main.h"
 
 /**
  * _strdup - check the code for ALX School students.
