@@ -33,6 +33,8 @@ char *_strdup(char *str)
 	{
 		return (NULL);
 	}
+	
+	arr = (char *)malloc(l * sizeof(char));
 	l = len(str);
 	while (str[i] != '\0')
 	{
