@@ -13,7 +13,7 @@ char *str_concat(char *s1, char *s2)
 
 	if (s1 == NULL && s2 == NULL)
 	{
-		return NULL;
+		return (tmp);
 	}
 	if (s1 == NULL)
 	{
@@ -38,5 +38,5 @@ char *str_concat(char *s1, char *s2)
 		j++;
 	}
 	arr[i+j] = '\0';
-	return arr;
+	return (arr);
 }
