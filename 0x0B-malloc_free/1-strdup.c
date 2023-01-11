@@ -1,9 +1,9 @@
 #include "main.h"
 
 /**
- * _strdup - check the code for ALX School students.
- * @str: string
- * Return: pointer to a string
+ * len - check the length of a string.
+ * @s: string
+ * Return: len
  */
 
 int len(char *s)
@@ -18,15 +18,22 @@ int len(char *s)
 	return len;
 }
 
+/**
+ * _strdup - copies a string given as a parameter.
+ * @str: string
+ * Return: pointer to a string
+ */
 char *_strdup(char *str)
 {
-	int i = 0, l = len(str);
+	int i = 0, l = 0;
+
 	char *arr = (char *)malloc(l * sizeof(char));
 
 	if (str == NULL)
 	{
 		return (NULL);
 	}
+	l = len(str);
 	while (str[i] != '\0')
 	{
 		arr[i] = str[i];
