@@ -1,5 +1,6 @@
 #include "main.h"
 #include <stdio.h>
+#include <stdlib.h>
 
 /**
  * main - multiplies two numbers
@@ -7,13 +8,13 @@
  * @argv: array of numbers
  */
 
-int main(int argc, int *argv[])
+int main(int argc, char *argv[])
 {
 	if (argc != 3)
 	{
 		printf("Error\n");
 		return (1);
 	}
-	printf("%i", (argv[1] * argv[2]));
+	printf("%i", (atoi(argv[1]) * atoi(argv[2])));
 	return (0);
 }
