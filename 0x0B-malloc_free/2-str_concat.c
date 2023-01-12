@@ -1,14 +1,14 @@
 #include "main.h"
 
 /**
- * _str_concat - check the code for ALX School students.
+ * str_concat - check the code for ALX School students.
  * @s1: first string
  * @s2: second string
  * Return: pointer to a string.
  */
 char *str_concat(char *s1, char *s2)
 {
-	char *arr,*tmp = " ";
+	char *arr, *tmp = "";
 	char *str = "";
 	int i = 0, j = 0;
 
