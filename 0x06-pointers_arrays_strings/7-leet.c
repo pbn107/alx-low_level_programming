@@ -4,7 +4,7 @@
 /**
  * leet - replaces certain letters with digits
  * @str: string to be altered
- * Return: Always 0.
+ * Return: pointer to a string.
  */
 char *leet(char *str)
 {

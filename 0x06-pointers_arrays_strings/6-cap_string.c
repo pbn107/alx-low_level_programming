@@ -2,7 +2,7 @@
 
 /**
  * cap_string - capitalise a string
- *  @str: string
+ * @str: string
  * Return: pointer to a string.
  */
 
@@ -21,6 +21,6 @@ char *cap_string(char *str)
         }
         i++;
     }
-    return str;
+    return (str);
 }
 
