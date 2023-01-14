@@ -6,6 +6,7 @@
  * main - adds numbers passed as arguments
  * @argc: number of arguments
  * @argv: array of numbers
+ * Return: always 0.
  */
 
 int main(int argc, char *argv[])
@@ -17,7 +18,6 @@ int main(int argc, char *argv[])
         printf("Error\n");
         return (1);
     }
-
     change = atoi(argv[1]);
     while (change > 0)
     {
