@@ -6,6 +6,7 @@
  * main - adds numbers passed as arguments
  * @argc: number of arguments
  * @argv: array of numbers
+ * Return: always zero
  */
 
 int main(int argc, char *argv[])
@@ -18,7 +19,7 @@ int main(int argc, char *argv[])
 		return (0);
 	}
 
-	while ( i < argc)
+	while (i < argc)
 	{
 		if (atoi(argv[i]) == 0)
 		{
