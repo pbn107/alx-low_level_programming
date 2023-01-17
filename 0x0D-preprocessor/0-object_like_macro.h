@@ -1,5 +1,5 @@
-#ifndef MACRO_H
-#define MACRO_H
+#ifndef HEADER_MACRO
+#define HEADER_MACRO
 
 #define SIZE 1024
 
