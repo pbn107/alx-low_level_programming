@@ -37,10 +37,13 @@ void print_all(char *format, ...)
 			printf("%f", va_arg(ls, double));
 			i++;
 		}
+		else if (*fmt == 's' && va_arg(ls, char *) == NULL)
+		{
+			printf("nil");
+		}
 		else if (*fmt == 's')
 		{
-			printf("%s", va_arg(ls, char *));
-			i++;
+			printf("%s",va_arg(ls, char *));
 		}
 		fmt++;
 	}
