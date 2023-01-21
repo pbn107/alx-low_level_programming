@@ -17,31 +17,28 @@ void print_all(char *format, ...)
 
 	while (*fmt)
 	{
+		if (i != 0 && (*fmt == 'c' || *fmt == 'i' || *fmt == 'f' || *fmt == 's'))
+		{
+			printf(", ");
+		}
+
 		if (*fmt == 'c')
 		{
-			if (i != 0)
-				printf(", ");
 			printf("%c", va_arg(ls, int));
 			i++;
 		}
 		else if (*fmt == 'i')
 		{
-			if (i != 0)
-				printf(", ");
 			printf("%i", va_arg(ls, int));
 			i++;
 		}
 		else if (*fmt == 'f')
 		{
-			if (i != 0)
-				printf(", ");
 			printf("%f", va_arg(ls, double));
 			i++;
 		}
 		else if (*fmt == 's')
 		{
-			if (i != 0)
-				printf(", ");
 			printf("%s", va_arg(ls, char *));
 			i++;
 		}
