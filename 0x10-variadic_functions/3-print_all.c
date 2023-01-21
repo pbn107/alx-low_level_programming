@@ -11,33 +11,33 @@ void print_all(char *format, ...)
 {
 	char *fmt = format;
 	va_list ls;
-	int i = 0;
+	int i = 0, j = 0;
 
 	va_start(ls, format);
-	while (*fmt)
+	while (fmt[j] != '\0')
 	{
-		if (i != 0 && (*fmt == 'c' || *fmt == 'i' || *fmt == 'f' || *fmt == 's'))
+		if (i != 0 && (fmt[j] == 'c' || fmt[j] == 'i' || fmt[j] == 'f' || fmt[j] == 's'))
 			printf(", ");
-		if (*fmt == 'c')
+		if (fmt[j] == 'c')
 		{
 			printf("%c", va_arg(ls, int));
 			i++;
 		}
-		else if (*fmt == 'i')
+		else if (fmt[j] == 'i')
 		{
 			printf("%i", va_arg(ls, int));
 			i++;
 		}
-		else if (*fmt == 'f')
+		else if (fmt[j] == 'f')
 		{
 			printf("%f", va_arg(ls, double));
 			i++;
 		}
-		else if (*fmt == 's' && va_arg(ls, char *) == NULL)
+		else if (fmt[j] == 's' && va_arg(ls, char *) == NULL)
 			printf("nil");
-		else if (*fmt == 's')
+		else if (fmt[j] == 's')
 			printf("%s", va_arg(ls, char *));
-		fmt++;
+		j++;
 	}
 	printf("\n");
 }
