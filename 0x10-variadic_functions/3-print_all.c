@@ -14,14 +14,10 @@ void print_all(char *format, ...)
 	int i = 0;
 
 	va_start(ls, format);
-
 	while (*fmt)
 	{
 		if (i != 0 && (*fmt == 'c' || *fmt == 'i' || *fmt == 'f' || *fmt == 's'))
-		{
 			printf(", ");
-		}
-
 		if (*fmt == 'c')
 		{
 			printf("%c", va_arg(ls, int));
@@ -38,13 +34,9 @@ void print_all(char *format, ...)
 			i++;
 		}
 		else if (*fmt == 's' && va_arg(ls, char *) == NULL)
-		{
 			printf("nil");
-		}
 		else if (*fmt == 's')
-		{
-			printf("%s",va_arg(ls, char *));
-		}
+			printf("%s", va_arg(ls, char *));
 		fmt++;
 	}
 	printf("\n");
