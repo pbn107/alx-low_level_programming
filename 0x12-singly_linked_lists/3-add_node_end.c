@@ -10,7 +10,7 @@ int len(char *str)
 {
 	int len = 0, i = 0;
 
-	if ( str == NULL)
+	if (str == NULL)
 	{
 		return (0);
 	}
@@ -23,13 +23,20 @@ int len(char *str)
 	return (len);
 }
 
-list_t *add_node_end(list_t** head, const char * str)
+/**
+ * add_node_end - adds a node to the end of linked list
+ * @head: pointer to the end of a linked list
+ * @str: string
+ * Return: pointer to the linked list
+ */
+
+list_t *add_node_end(list_t **head, const char *str)
 {
 	list_t *node = NULL;
 	list_t *tmp = *head;
 
-	node = (list_t*)malloc(sizeof(list_t *));
-	
+	node = (list_t *)malloc(sizeof(list_t *));
+
 	if (node == NULL)
 	{
 		printf("Error!\n");

@@ -10,7 +10,7 @@ int len(char *str)
 {
 	int len = 0, i = 0;
 
-	if ( str == NULL)
+	if (str == NULL)
 	{
 		return (0);
 	}
@@ -23,12 +23,19 @@ int len(char *str)
 	return (len);
 }
 
-list_t *add_node(list_t** head, const char * str)
+/**
+ * add_node - add a ode at the beginning of a linked list
+ * @head: pointer to the head
+ * @str: string
+ * Return: pointer to a linked list
+ */
+
+list_t *add_node(list_t **head, const char *str)
 {
 	list_t *node = NULL;
 
 	node = malloc(sizeof(list_t *));
-	
+
 	if (node == NULL)
 	{
 		printf("Error!\n");
@@ -38,7 +45,7 @@ list_t *add_node(list_t** head, const char * str)
 	node->len = len((char *)str);
 	node->next = *head;
 	*head = node;
-	
+
 	return (*head);
 }
 
