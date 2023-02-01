@@ -3,7 +3,8 @@
 /**
  * delete_nodeint_at_index - deletes a node from an index
  * @head: pointer to the head
- * @index: index at which to delete a node 
+ * @index: index at which to delete a nod
+ * Return: numbers
  */
 
 int delete_nodeint_at_index(listint_t **head, unsigned int index)
@@ -22,6 +23,7 @@ int delete_nodeint_at_index(listint_t **head, unsigned int index)
 
 		*head = tmp->next;
 		free(node);
+
 		return (0);
 	}
 
