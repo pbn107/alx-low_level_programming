@@ -15,9 +15,8 @@ ssize_t read_textfile(const char *filename, size_t letters)
 	char c;
 	size_t l = 0;
 
-	if (!filename)
+	if (filename == NULL)
 	{
-		printf("file\n");
 		return (0);
 	}
 
@@ -25,12 +24,8 @@ ssize_t read_textfile(const char *filename, size_t letters)
 
 	if (fd == -1)
 	{
-		printf("2 file\n");
 		return (0);
 	}
-
-	printf("I am here\n");
-
 	while ((bytes = read(fd, &c, sizeof(c))) > 0)
 	{
 		if (l <= letters)
