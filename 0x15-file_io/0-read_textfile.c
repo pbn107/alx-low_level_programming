@@ -28,9 +28,16 @@ ssize_t read_textfile(const char *filename, size_t letters)
 	}
 	while ((bytes = read(fd, &c, sizeof(c))) > 0)
 	{
+		int wr;
+
 		if (l <= letters)
 		{
-			write(2, &c, sizeof(c));
+			wr = write(2, &c, sizeof(c));
+
+			if (wr < 0)
+			{
+				return (0);
+			}
 			l++;
 		}
 		else
