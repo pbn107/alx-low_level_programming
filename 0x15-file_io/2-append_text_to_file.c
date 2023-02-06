@@ -3,13 +3,13 @@
 /**
  * append_text_to_file - appends text to a file
  * @filename: name of the file to append on
- * @text_content - text to append with
+ * @text_content: text to append with
  * Return: -1 (failure) or 1 if successful
  */
 
 int append_text_to_file(const char *filename, char *text_content)
 {
-	int fd,i = 0;
+	int fd, i = 0;
 	char c;
 
 	if (!filename)
@@ -21,7 +21,7 @@ int append_text_to_file(const char *filename, char *text_content)
 		return (1);
 	}
 
-	fd = open(filename, O_RDWR |O_APPEND);
+	fd = open(filename, O_RDWR | O_APPEND);
 	if (fd == -1)
 		return (-1);
 
@@ -37,4 +37,3 @@ int append_text_to_file(const char *filename, char *text_content)
 	close(fd);
 	return (1);
 }
-	
