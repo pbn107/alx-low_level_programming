@@ -24,14 +24,19 @@ int main(int argc, char *argv[])
 		return (98);
 	}
 	src = open(argv[1], O_RDONLY);
-	dest = open(argv[2], O_RDWR | O_CREAT | O_RDWR);
+	dest = open(argv[2], O_RDWR | O_CREAT | O_RDWR | S_IRUSR | S_IWUSR |S_IRGRP |S_IWGRP |S_IROTH);
 	if (src == -1 || dest == -1)
 	{
 		return (98);
 	}
 	while ((bytes = read(src, buffer, sizeof(buffer))) > 0)
 	{
-		write(dest, buffer, sizeof(buffer));
+		int r = write(dest, buffer, sizeof(buffer));
+	
+		if (r < 0)
+		{
+			return (99);
+		}
 	}
 	close(src);
 	close(dest);
