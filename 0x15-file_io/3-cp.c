@@ -11,7 +11,7 @@
 int main(int argc, char *argv[])
 {
 	char buffer[1024];
-	int src, dest, bytes;
+	int src, dest, bytes, cf;
 
 	if (argc != 3)
 	{
@@ -21,24 +21,35 @@ int main(int argc, char *argv[])
 
 	if (argv[1] == NULL || argv[2] == NULL)
 	{
-		return (98);
+		exit (98);
 	}
+
 	src = open(argv[1], O_RDONLY);
-	dest = open(argv[2], O_RDWR | O_CREAT | O_RDWR | S_IRUSR | S_IWUSR |S_IRGRP |S_IWGRP |S_IROTH);
-	if (src == -1 || dest == -1)
+	dest = open(argv[2], O_WRONLY | O_TRUNC | O_CREAT, 0664);
+
+	if (src == -1)
 	{
-		return (98);
+		dprintf(2, "Error: Can't read from file %s\n",argv[1]);
+		exit (98);
 	}
 	while ((bytes = read(src, buffer, sizeof(buffer))) > 0)
 	{
 		int r = write(dest, buffer, sizeof(buffer));
-	
-		if (r < 0)
+		if (r == -1)
 		{
-			return (99);
+			dprintf(2, "Error: Can't write to %s \n", argv[2]);
+			exit (99);
 		}
 	}
-	close(src);
-	close(dest);
+	if ((cf = close(src)) == -1)
+	{
+		dprintf(2, "Error: Can't close fd %i\n", cf);
+		exit (100);
+	}
+	if ((cf = close(dest)) == -1)
+	{
+		dprintf(2, "Error: Can't close fd %i\n",cf);
+		exit(100);
+	}
 	return (0);
 }
